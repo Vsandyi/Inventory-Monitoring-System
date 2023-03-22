@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+<title> SEATWORK 2.1</title> 
+<style type="text/css">
+    table{
+        border: 2px solid black;
+        width: 80px;
+        height: 30px;
+    }
+
+</style>
+</head>
+<body>
+
+<form>
+    <label> LAST NAME:  </label> 
+<input type = "text"  id="name"> 
+<label> FIRST NAME: </label> 
+<input type = "text" id="lname"> <br> <br>
+<label> SECTION NAME: </label> 
+<input type = "text" id="secname">
+<label>  YEAR: </label> 
+<input type = "number" id="yearname"> <br> <br>
+<hr>
+<label>  QUIZ: </label> 
+<input type = "number" id="qscore"> <br> <br>
+<label>  ASSIGNMENT: </label> 
+<input type = "number" id="ascore"> <br> <br>
+<label>  RECITATION: </label> 
+<input type = "number" id="rscore"> <br> <br>
+<label>  TEAM EXAM: </label> 
+<input type = "number" id="texam"> <br>  <br>
+<button type="button" onclick="edisige()"> SHOW COMPUTED GRADES </button>
+<p id="p1"> Name: (Last name, First Name)  </p>
+<p id="p2">Class: </p>
+
+
+<table>
+    <label>Quiz</label>
+    <td id="table"></td>
+</table>
+<br>
+<table>
+    <label>Assignment</label>
+    <td id="table1"></td>
+</table>
+<br>
+<table>
+    <label>Recitation</label>
+    <td id="table2"></td>
+</table>
+<br>
+<table>
+    <label>Term Exam</label>
+    <td id="table3"></td>
+</table>
+
+
+
+
+
+</form>
+
+<script type="text/javascript">
+
+    function edisige(){
+    var a,b,c, d, e, f, g, h,i,j,k,l;
+    
+    
+  
+    
+     a=document.getElementById("name").value;
+     b=document.getElementById("lname").value;
+     c=document.getElementById("secname").value;
+     d=document.getElementById("yearname").value;
+     e=document.getElementById("qscore").value;
+     f=document.getElementById("ascore").value;
+     g=document.getElementById("rscore").value;
+     h=document.getElementById("texam").value;
+    
+     
+
+
+     document.getElementById ("p1").innerHTML = "Name: (Last name, First Name)" + b + " , " + a ; 
+     document.getElementById ("p2").innerHTML = "Class: " + c + "-" + d;
+     document.getElementById("table").innerHTML= e;
+     document.getElementById("table1").innerHTML= f;
+     document.getElementById("table2").innerHTML= g;
+     document.getElementById("table3").innerHTML= h;
+
+     
+    
+    }
+    
+    </script>
+
+
+
+
+
+</body>
+</html>
