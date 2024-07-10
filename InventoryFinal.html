@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Monitoring System</title>
+    <link rel="stylesheet" href="InventoryFinal.css">
+</head>
+
+<body>
+
+    <div class="left">
+        <hr> <h2 style="font-size: 25px;"  id="system">Inventory Monitoring System</h2> <hr>
+        <h5 style="font-family: Times New Roman, Times, serif";>Please Fill up the Form.</h5> 
+        
+        <label for="idNumber">Student ID:</label>
+        <input type="text" id="idNumber" placeholder="PPY-YYYY-XXXXXX" required>
+
+        <label for="department">Department:</label>
+        <select id="department" required>
+            <option value="BSIT" >BSIT</option>
+            <option value="BSBA">BSBA</option>
+            <option value="BSED">BSED</option>
+            <option value="BEED">BEED</option>
+        </select>
+
+        <label for="yearLevel">Year Level:</label>
+        <select id="yearLevel" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <label for="borrowDate">Date Borrowed:</label>
+        <input type="date" id="borrowDate" required>
+
+        <h3>Item Type:</h3> 
+        <select id="itemType" onchange="updateStockDisplay()" required>
+            <option value="consumable">Consumable Items</option>
+            <option value="returnable">Returnable Items</option>
+        </select>
+        
+        <h3>Items:</h3>
+        <select id="items" required></select>
+        
+
+        <label for="itemQuantity">Quantity:</label> 
+        <input type="number" id="itemQuantity" placeholder="Quantity :" required>
+        
+        <label for="borrowPurpose" >Borrow Purpose:</label>
+        <input type="text" id="borrowPurpose" placeholder="Enter you reason:">
+        <button onclick="clearForm()" style="font-size: 15px;" id="clear1">Clear Form</button>
+        
+        <button onclick="addToCart()" class="half-width-button">Add to Cart</button>
+        <button onclick="checkout()"  class="half-width-button" >Checkout</button>
+        <hr>
+       
+       
+    </div>
+
+    <div class="right">
+        <div id="cartItems">
+
+             <h3 style="font-size: 17px;">Cart Items</h3> <hr id="a">
+            
+            <ul id="cartItemList"></ul>
+            <button onclick="addNewItem()" class="half-width-button1" >Add Item</button>
+            <button onclick="showAllStock()" class="half-width-button1" >Show All Stock</button>
+            <button onclick="restockItems()" class="half-width-button1">Restock Item</button>
+        
+           
+  
+        </div>
+
+        <div id="borrowedItemsTable">
+             <h3 style="font-size: 20px";>Borrowed Items</h3><hr id="a">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Student ID</th>
+                        <th>Department</th>
+                        <th>Date Borrowed</th>
+                        <th>Item Type</th>
+                        <th>Due Date</th>
+                        <th>Quantity</th>
+                        <th>Year Level</th>
+                    </tr>
+                </thead>
+                <tbody id="borrowedItemsBody"></tbody>
+            </table>
+        </div>
+        <div id="consumableItemsTable">
+    <h3 style="font-size: 20px;">Consumed Items</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Department</th>
+                <th>Date Consumed</th>
+                <th>Item Type</th>
+                <th>Quantity</th>
+                <th>Year Level</th>
+            </tr>
+        </thead>
+        <tbody id="consumableItemsLogBody"></tbody>
+    </table>
+</div>
+        <div id="log">
+          <h3 style="font-size: 20px;">Transaction Log</h3><hr id="a">
+            <table id="logTable">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Student ID</th>
+                        <th>Department</th>
+                        <th>Year Level</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Borrow Purpose</th>
+                    </tr>
+                </thead>
+                <tbody id="logList"></tbody>
+            </table>
+        </div>
+        <button onclick="clearAllData()" style="font-size: 15px;" id="clear">Clear All Data</button>
+    </div>
+    <script src="InventoryFinal.js"></script>
+</body>
+
+</html>
